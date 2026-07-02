@@ -2,50 +2,14 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Plus } from "lucide-react";
 import { PageWrap, Reveal, LetterReveal, ParallaxImage, ClipReveal, Marquee } from "@/components/site/motion";
+import { VideoScrollHero } from "@/components/site/VideoScrollHero";
 import { IMAGES, SERVICES, PROJECTS, STATS, TESTIMONIALS, FOUNDERS } from "@/data/content";
 
 export default function Home() {
   return (
     <PageWrap testId="home-page">
       {/* Hero */}
-      <section data-testid="hero-section" className="relative h-screen min-h-[600px] overflow-hidden">
-        <motion.div
-          className="absolute inset-0"
-          initial={{ clipPath: "inset(100% 0 0 0)", scale: 1.1 }}
-          animate={{ clipPath: "inset(0% 0 0 0)", scale: 1 }}
-          transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <img src={IMAGES.hero} alt="Modern architecture by ArchtiX" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#111111]/70 via-[#111111]/35 to-transparent" />
-        </motion.div>
-        <div className="relative h-full flex flex-col justify-end px-6 md:px-12 lg:px-24 pb-16 md:pb-24">
-          <motion.p
-            className="overline-label !text-[#F8F7F5] mb-6"
-            initial={{ opacity: 0, x: -60 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          >
-            Architect & Interior Designers — Gokak
-          </motion.p>
-          <motion.h1
-            className="font-serif-display text-5xl sm:text-6xl lg:text-8xl font-medium tracking-tight leading-[0.95] max-w-5xl text-[#F8F7F5]"
-            initial={{ opacity: 0, x: -80 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.1, delay: 1.05, ease: [0.22, 1, 0.36, 1] }}
-          >
-            Dream houses defined by clarity
-          </motion.h1>
-          <motion.p
-            className="mt-8 max-w-md text-base leading-relaxed text-[#E8E6E1]"
-            initial={{ opacity: 0, x: -60 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9, delay: 1.3, ease: [0.22, 1, 0.36, 1] }}
-          >
-            ArchtiX offers architectural and interior design consultations that help you achieve your dream house —
-            from the first sketch to the last detail on site.
-          </motion.p>
-        </div>
-      </section>
+      <VideoScrollHero />
 
       {/* Achievements */}
       <section data-testid="stats-section" className="px-6 md:px-12 lg:px-24 py-24 lg:py-32">
