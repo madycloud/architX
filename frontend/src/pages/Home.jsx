@@ -8,39 +8,43 @@ export default function Home() {
   return (
     <PageWrap testId="home-page">
       {/* Hero */}
-      <section className="px-6 md:px-12 lg:px-24 pt-32 md:pt-44 pb-16">
-        <Reveal delay={0.1}>
-          <p className="overline-label mb-6">Architect & Interior Designers — Gokak</p>
-        </Reveal>
-        <LetterReveal
-          text="Dream houses defined by clarity"
-          className="font-serif-display text-5xl sm:text-6xl lg:text-8xl font-medium tracking-tight leading-[0.95] max-w-5xl"
-          delay={0.2}
-        />
-        <div className="mt-10 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
-          <Reveal delay={0.5} className="max-w-md">
-            <p className="text-base leading-relaxed text-[#5C5A56]">
-              ArchtiX offers architectural and interior design consultations that help you achieve your dream house —
-              from the first sketch to the last detail on site.
-            </p>
-          </Reveal>
-          <Reveal delay={0.6}>
-            <Link
-              to="/contact"
-              data-testid="hero-cta"
-              className="group inline-flex items-center gap-3 bg-[#111111] text-[#F8F7F5] px-8 py-4 text-xs uppercase tracking-[0.2em] font-bold hover:bg-[#333333] transition-colors"
-            >
-              Book a consultation
-              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-            </Link>
-          </Reveal>
+      <section data-testid="hero-section" className="relative h-screen min-h-[600px] overflow-hidden">
+        <motion.div
+          className="absolute inset-0"
+          initial={{ clipPath: "inset(100% 0 0 0)", scale: 1.1 }}
+          animate={{ clipPath: "inset(0% 0 0 0)", scale: 1 }}
+          transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <img src={IMAGES.hero} alt="Modern architecture by ArchtiX" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#111111]/70 via-[#111111]/35 to-transparent" />
+        </motion.div>
+        <div className="relative h-full flex flex-col justify-end px-6 md:px-12 lg:px-24 pb-16 md:pb-24">
+          <motion.p
+            className="overline-label !text-[#F8F7F5] mb-6"
+            initial={{ opacity: 0, x: -60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, delay: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          >
+            Architect & Interior Designers — Gokak
+          </motion.p>
+          <motion.h1
+            className="font-serif-display text-5xl sm:text-6xl lg:text-8xl font-medium tracking-tight leading-[0.95] max-w-5xl text-[#F8F7F5]"
+            initial={{ opacity: 0, x: -80 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.1, delay: 1.05, ease: [0.22, 1, 0.36, 1] }}
+          >
+            Dream houses defined by clarity
+          </motion.h1>
+          <motion.p
+            className="mt-8 max-w-md text-base leading-relaxed text-[#E8E6E1]"
+            initial={{ opacity: 0, x: -60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, delay: 1.3, ease: [0.22, 1, 0.36, 1] }}
+          >
+            ArchtiX offers architectural and interior design consultations that help you achieve your dream house —
+            from the first sketch to the last detail on site.
+          </motion.p>
         </div>
-      </section>
-
-      <section className="px-6 md:px-12 lg:px-24">
-        <ClipReveal>
-          <ParallaxImage src={IMAGES.hero} alt="Modern architecture by ArchtiX" className="h-[50vh] md:h-[80vh]" />
-        </ClipReveal>
       </section>
 
       {/* Stats */}
