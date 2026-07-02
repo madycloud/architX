@@ -43,9 +43,9 @@ export const Footer = () => (
         </div>
       </div>
       <div className="mt-20 pt-8 border-t border-[#2A2A2A] flex flex-col md:flex-row justify-between gap-4">
-        <p className="font-serif-display text-xl font-semibold">ArchtiX</p>
+        <p className="text-xs text-[#8B8880] tracking-wide">© {new Date().getFullYear()} ArchtiX — Architect & Interior Designers. All rights reserved.</p>
         <p className="text-xs text-[#8B8880] tracking-wide">
-          © {new Date().getFullYear()} ArchtiX — Architect & Interior Designers. All rights reserved.
+          Designed & Developed by madycloud.me
         </p>
       </div>
     </div>
