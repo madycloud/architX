@@ -47,15 +47,45 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats */}
+      {/* Achievements */}
       <section data-testid="stats-section" className="px-6 md:px-12 lg:px-24 py-24 lg:py-32">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 border-t border-[#DCD9D3] pt-12">
-          {STATS.map((s, i) => (
-            <Reveal key={s.label} delay={i * 0.1} className="text-center md:text-left">
-              <p className="font-serif-display text-5xl lg:text-6xl font-medium">{s.value}</p>
-              <p className="mt-2 text-xs uppercase tracking-[0.2em] font-bold text-[#5C5A56]">{s.label}</p>
-            </Reveal>
-          ))}
+        <Reveal>
+          <p className="overline-label mb-4">Achievements</p>
+        </Reveal>
+        <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-12 border-t border-[#DCD9D3] pt-12">
+          {/* Left: blank with sliding image row */}
+          <div className="lg:col-span-5 flex flex-col justify-end">
+            <div className="flex gap-4">
+              {[IMAGES.project1, IMAGES.project2, IMAGES.project3].map((src, i) => (
+                <motion.div
+                  key={i}
+                  className="w-1/3 overflow-hidden"
+                  initial={{ opacity: 0, x: -80 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-80px" }}
+                  transition={{ duration: 0.9, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <img src={src} alt="ArchtiX work" className="w-full h-40 md:h-52 object-cover" loading="lazy" />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+          {/* Right: vertical stats */}
+          <div className="lg:col-span-6 lg:col-start-7">
+            {[...STATS, { value: "2020", label: "Since" }].map((s, i) => (
+              <motion.div
+                key={s.label}
+                className="flex items-baseline justify-between py-6 border-b border-[#DCD9D3]"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.8, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <p className="font-serif-display text-5xl lg:text-6xl font-medium">{s.value}</p>
+                <p className="text-xs uppercase tracking-[0.2em] font-bold text-[#5C5A56]">{s.label}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 

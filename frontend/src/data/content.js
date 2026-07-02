@@ -90,7 +90,7 @@ export const PROJECTS = [
 
 export const STATS = [
   { value: "120+", label: "Projects delivered" },
-  { value: "10+", label: "Years in practice" },
+  { value: "6+", label: "Years in practice" },
   { value: "98%", label: "Client satisfaction" },
   { value: "6", label: "Integrated services" },
 ];
