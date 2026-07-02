@@ -1,0 +1,115 @@
+{
+  "theme": "Light",
+  "archetype": "5 (Luxury) - Editorial/Swiss Brutalist Hybrid",
+  "design_philosophy": "A premium, motion-heavy, editorial architecture website inspired by the Halston Webflow template and Apple Vision Pro's fluid scroll experiences. It emphasizes high-end aesthetics, calm neutral palettes, massive serif typography, generous negative space, and butter-smooth framer-motion scroll reveals and parallax effects.",
+  "colors": {
+    "background": "#F8F7F5",
+    "surface": "#FFFFFF",
+    "surface_secondary": "#EAE7E1",
+    "text_primary": "#111111",
+    "text_secondary": "#5C5A56",
+    "border": "#DCD9D3",
+    "accent": "#111111",
+    "accent_hover": "#333333"
+  },
+  "typography": {
+    "font_family": {
+      "heading": "Cormorant Garamond, serif",
+      "body": "Manrope, sans-serif"
+    },
+    "scale": {
+      "h1": "text-5xl lg:text-6xl tracking-tight leading-none font-medium",
+      "h2": "text-4xl lg:text-5xl tracking-tight leading-none font-medium",
+      "h3": "text-2xl lg:text-3xl leading-snug font-medium",
+      "h4": "text-xl leading-snug font-medium",
+      "body": "text-base leading-relaxed text-[#5C5A56]",
+      "overline": "text-xs uppercase tracking-[0.2em] font-bold text-[#111111]"
+    }
+  },
+  "spacing_and_layout": {
+    "container_padding": "px-6 md:px-12 lg:px-24",
+    "section_spacing": "py-24 lg:py-32",
+    "grid_system": "Bento and asymmetrical grids. Use col-span-full to 8 for hero images, leaving negative space.",
+    "alignment": "Left-aligned dominant. Center alignment only for stats or isolated quotes."
+  },
+  "motion_and_interactions": {
+    "page_transitions": "Fade and slight translateY on route changes.",
+    "hero_reveal": "Staggered letter reveal for headings (using Framer Motion). Image clip-path reveal from bottom to top.",
+    "scroll_effects": "Parallax effect on large images using useScroll and useTransform. Images move slightly slower than the scroll.",
+    "marquee": "Slow, smooth horizontal scrolling text for brand statements or service lists.",
+    "hover_states": "Images scale up slightly (1.05) inside an overflow-hidden container. Buttons invert colors.",
+    "accordions": "Services section should use custom plus-icon toggles or Shadcn Accordion heavily customized to look minimal with a 1px bottom border."
+  },
+  "components": {
+    "navigation": "Fixed header with crystal glassmorphism (backdrop-blur-xl bg-[#F8F7F5]/70), 1px subtle bottom border. Include 'ArchtiX' wordmark.",
+    "buttons": "Flat, rectangular, no rounded corners. Solid dark background (#111111) with white text, or transparent with 1px dark border.",
+    "cards": "Cardless design. Use raw grid items with subtle borders or just negative space separation.",
+    "contact_form": "Minimalist inputs. 1px bottom border only (no full box), floating labels or simple placeholder. Uses Shadcn Input/Textarea stripped of standard borders."
+  },
+  "pages_to_build": [
+    "Home",
+    "About",
+    "Services",
+    "Projects",
+    "Contact"
+  ],
+  "content_requirements": {
+    "services_list": ["Planning", "Interior Design", "Construction", "3D Walkthrough", "ACP design", "Turnkey Project"],
+    "founders": [
+      {
+        "name": "Ar. Akshay Varadai",
+        "role": "Founder & Principal Architect"
+      },
+      {
+        "name": "Er. Ashish Varadai",
+        "role": "Founder & Head of Construction"
+      }
+    ],
+    "address": "Varadai Complex, Vivekanand Nagar A1 Cross, Gokak - 591307"
+  },
+  "media": {
+    "hero_image": {
+      "url": "https://images.pexels.com/photos/13203184/pexels-photo-13203184.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Luxury modern architecture exterior with pool"
+    },
+    "project_images": [
+      {
+        "url": "https://images.pexels.com/photos/8134821/pexels-photo-8134821.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Contemporary two-story luxury home"
+      },
+      {
+        "url": "https://images.pexels.com/photos/29012619/pexels-photo-29012619.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Minimalist interior living room"
+      },
+      {
+        "url": "https://images.pexels.com/photos/34688219/pexels-photo-34688219.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Spacious modern living room"
+      }
+    ],
+    "founder_images": [
+      {
+        "url": "https://images.pexels.com/photos/6615203/pexels-photo-6615203.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Ar. Akshay Varadai - Architect working on model"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1574281570877-bd815ebb50a4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTJ8MHwxfHNlYXJjaHw0fHxhcmNoaXRlY3QlMjBwb3J0cmFpdCUyMHByb2Zlc3Npb25hbHxlbnwwfHx8fDE3ODI5OTA1NzJ8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Er. Ashish Varadai - Confident portrait"
+      }
+    ],
+    "about_image": {
+      "url": "https://images.unsplash.com/photo-1707725669525-d925dc9e9010?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwyfHxpbnRlcmlvciUyMGNvbnN0cnVjdGlvbiUyMHNpdGUlMjBkZXRhaWxzfGVufDB8fHx8MTc4Mjk5MDU3MXww&ixlib=rb-4.1.0&q=85",
+      "description": "Interior construction site details"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Use react-router-dom for multi-page routing (Home, About, Services, Projects, Contact).",
+    "Install and use Framer Motion heavily for scroll-linked animations, letter staggers, and page transitions.",
+    "Install lucide-react for UI icons (plus, minus, arrow-right).",
+    "Install react-fast-marquee for the text marquee sections.",
+    "Add 'Cormorant Garamond' and 'Manrope' to your Tailwind font config and fetch them via Google Fonts in index.css.",
+    "Do not use Shadcn card components. Use raw flex/grid layouts with large padding and subtle or no borders.",
+    "Use standard Shadcn forms for the Contact page but override the inputs to have only a bottom border (border-b) instead of full rounding.",
+    "Apply `data-testid` to all interactive elements (links, buttons, form inputs).",
+    "Ensure the hero heading uses a staggered character or word animation using Framer Motion."
+  ]
+}
